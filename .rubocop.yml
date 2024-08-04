@@ -1,0 +1,49 @@
+require:
+  - rubocop-rails
+  - rubocop-performance
+  - rubocop-capybara
+  - rubocop-i18n
+
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 3.1
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+Style/Documentation:
+  Enabled: false
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+Style/ConditionalAssignment:
+  Enabled: false
+Layout/CaseIndentation:
+  IndentOneStep: true
+Lint/ShadowingOuterLocalVariable:
+  Enabled: false
+Metrics/ParameterLists:
+  CountKeywordArgs: false
+Metrics/BlockLength:
+  CountAsOne: ['array', 'hash', 'method_call', 'heredoc']
+Rails/RequestReferer:
+  Enabled: false
+I18n/RailsI18n:
+  Enabled: false
+I18n/GetText:
+  Enabled: false
+
+# The following lints are potentially desirable to have in the long run, but not at the current moment.
+
+Metrics/AbcSize:
+  Enabled: false
+Metrics/MethodLength:
+  Enabled: false
+Naming/AccessorMethodName:
+  Enabled: false
