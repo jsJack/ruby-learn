@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_08_08_101150) do
+ActiveRecord::Schema[7.0].define(version: 2024_08_09_100537) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -62,10 +62,15 @@ ActiveRecord::Schema[7.0].define(version: 2024_08_08_101150) do
     t.string "full_name", null: false
     t.string "profile_picture"
     t.string "email", null: false
-    t.string "password", null: false
     t.enum "account_type", default: "user", null: false, enum_type: "account_types"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "encrypted_password", limit: 128
+    t.string "confirmation_token", limit: 128
+    t.string "remember_token", limit: 128
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
+    t.index ["email"], name: "index_users_on_email"
+    t.index ["remember_token"], name: "index_users_on_remember_token", unique: true
   end
 
   add_foreign_key "comments", "posts"

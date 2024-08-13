@@ -1,14 +1,14 @@
 class PostsController < ApplicationController
-  before_action :get_post, only: %i[show edit update destroy]
+  before_action :post, only: %i[show edit update destroy]
 
-  # GET /posts
+  # GET /posts, /
   def index
     @posts = Post.all
   end
 
   # GET /posts/1
   def show
-    # Nothing else needed here seen as I already have @post from the before_action
+    # Nothing else needed here seen as I already have @posts from the before_action
   end
 
   # GET /posts/new
@@ -28,7 +28,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
-    # Nothing else needed here seen as I already have @post from the before_action
+    # Nothing else needed here seen as I already have @posts from the before_action
   end
 
   # PATCH /posts/1
@@ -48,7 +48,7 @@ class PostsController < ApplicationController
   # Private methods
   private
 
-  def get_post
+  def post
     @post = Post.find(params[:id])
   end
 

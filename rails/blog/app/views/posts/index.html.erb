@@ -1,0 +1,9 @@
+<% if current_user %>
+  <%= current_user.full_name %>
+  <%= current_user.email %>
+
+  <%= link_to "Sign Out", sign_out_path, data: { turbo_method: :delete } %>
+<% else %>
+  <p>Not signed in</p>
+  <%= link_to "Sign in", sign_in_path %>
+<% end %>
