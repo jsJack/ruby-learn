@@ -1,9 +1,132 @@
-<% if current_user %>
-  <%= current_user.full_name %>
-  <%= current_user.email %>
+<!DOCTYPE html>
+<html lang="en">
 
-  <%= link_to "Sign Out", sign_out_path, data: { turbo_method: :delete } %>
-<% else %>
-  <p>Not signed in</p>
-  <%= link_to "Sign in", sign_in_path %>
-<% end %>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Posts | Wordbase</title>
+
+  <%= stylesheet_link_tag "posts" %>
+</head>
+
+<body class="flex-col">
+<div id="header" class="bkg flex-row"
+     style="align-items: center; justify-content: space-between; padding: 10px 50px;">
+  <div class="flex-row" style="gap: 5px;">
+    <%= image_tag "logo.png", alt: "Wordbase Logo", class: "logo", style: "width: 60px;" %>
+    <h2>Wordbase</h2>
+  </div>
+  <div>
+    <p style="background-color: #007AFF; padding: 10px 20px; border-radius: 25px; color: white; min-width: 220px; max-width: 400px; text-wrap: wrap; margin: 0 25px;"
+       class="announcement"><strong>Announcement:</strong> You are a really cool human being!</p>
+  </div>
+  <div>
+    <ul class="flex-row" style="gap: 20px; list-style: none; margin: 0; padding: 0; align-items: center;">
+      <li>Home</li>
+      <li>New Post</li>
+      <%= image_tag "pfp.jpg", alt: "User", style: "width: 45px; height: 45px; object-fit: cover; border: 1px solid darkslategrey; border-radius: 300px;" %>
+    </ul>
+  </div>
+</div>
+<div id="content" style="padding: 30px 60px; gap:20px; background-color: white;" class="flex-col">
+  <h1>Recent posts</h1>
+  <div
+    style="min-height: 15vh; max-height: auto; background-color: #e9ecef; border-radius: 20px; display: flex; flex-direction: row; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);">
+    <%= image_tag "post-demo-1.jpg", alt: "Post Image", style: "width: 250px; min-width: 250px; max-height: 20vh; object-fit: cover; border-radius: 20px; margin: 10px; align-self: center;" %>
+    <div style="display: flex; flex-direction: column; justify-content: space-between;">
+      <h2 style="margin-bottom: 0;">The Art of Paella: A Symphony of Flavors in Every Bite</h2>
+      <p style="overflow: hidden; text-overflow: ellipsis; padding: 5px;">There's something undeniably captivating about
+        watching a traditional paella being crafted to perfection. The sight of
+        plump, succulent prawns arranged meticulously over a bed of golden saffron-infused rice is enough to
+        make any food
+        lover's heart skip a beat. This image captures a moment of culinary artistry where passion meets
+        precision, and the
+        result is nothing short of extraordinary.</p>
+      <p style="overflow: hidden; font-size: 12px; color: darkslategrey;">Published by Jack Perry on 25th August 2005</p>
+    </div>
+  </div>
+  <div
+    style="min-height: 15vh; max-height: auto; background-color: #e9ecef; border-radius: 20px; display: flex; flex-direction: row; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);">
+    <%= image_tag "post-demo-2.jpg", alt: "Post image", style: "width: 250px; min-width: 250px; max-height: 20vh; object-fit: cover; border-radius: 20px; margin: 10px; align-self: center;" %>
+    <div style="display: flex; flex-direction: column; justify-content: space-between;">
+      <h2 style="margin-bottom: 0;">The Art of Paella: A Symphony of Flavors in Every Bite</h2>
+      <p style="overflow: hidden; text-overflow: ellipsis; padding: 5px;">There's something undeniably captivating
+        about
+        watching a traditional paella being crafted to perfection. The sight of
+        plump, succulent prawns arranged meticulously over a bed of golden saffron-infused rice is enough to
+        make any food
+        lover's heart skip a beat. This image captures a moment of culinary artistry where passion meets
+        precision, and the
+        result is nothing short of extraordinary.</p>
+      <p style="overflow: hidden; font-size: 12px; color: darkslategrey;">Published by Jack Perry on 25th August 2005
+      </p>
+    </div>
+  </div>
+  <div
+    style="min-height: 15vh; max-height: auto; background-color: #e9ecef; border-radius: 20px; display: flex; flex-direction: row; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);">
+    <%= image_tag "post-demo-3.jpg", alt: "Post Image", style: "width: 250px; min-width: 250px; max-height: 20vh; object-fit: cover; border-radius: 20px; margin: 10px; align-self: center;" %>
+    <div style="display: flex; flex-direction: column; justify-content: space-between;">
+      <h2 style="margin-bottom: 0;">The Art of Paella: A Symphony of Flavors in Every Bite</h2>
+      <p style="overflow: hidden; text-overflow: ellipsis; padding: 5px;">There's something undeniably captivating
+        about
+        watching a traditional paella being crafted to perfection. The sight of
+        plump, succulent prawns arranged meticulously over a bed of golden saffron-infused rice is enough to
+        make any food
+        lover's heart skip a beat. This image captures a moment of culinary artistry where passion meets
+        precision, and the
+        result is nothing short of extraordinary.</p>
+      <p style="overflow: hidden; font-size: 12px; color: darkslategrey;">Published by Jack Perry on 25th August 2005
+      </p>
+    </div>
+  </div>
+</div>
+<div id="footer" class="bkg flex-row" style="height: auto; margin-top: 5vh; justify-content: space-around;">
+  <div class="flex-row" style="gap: 10px; align-items: center;">
+    <!-- logo and address -->
+    <%= image_tag "logo.png", alt: "Wordbase Logo", class: "logo", style: "width: 250px" %>
+    <div>
+      <h2 style="margin-bottom: 5px;">Wordbase</h2>
+      <q>Where words come to life</q>
+      <br>
+      <address style="padding-left: 20px;">
+        <p>Wordbase Inc.<br />
+          1234 Wordbase Street<br />
+          Word City, Wordland<br />
+          12345</p>
+      </address>
+    </div>
+  </div>
+  <div class="flex-row" style="gap: 60px; align-items: center;">
+    <!-- quick links, company, follow us -->
+    <div>
+      <h3>Quick Links</h3>
+      <ul style="list-style: none; padding-left: 0.5vw;">
+        <li>Home</li>
+        <li>Posts</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Company</h3>
+      <ul style="list-style: none; padding-left: 0.5vw;">
+        <li>About Us</li>
+        <li>Our Team</li>
+        <li>Our Mission</li>
+        <li>Our Vision</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Follow Us</h3>
+      <ul style="list-style: none; padding-left: 0.5vw;">
+        <li>Facebook</li>
+        <li>Twitter</li>
+        <li>Instagram</li>
+        <li>LinkedIn</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+
+</html>

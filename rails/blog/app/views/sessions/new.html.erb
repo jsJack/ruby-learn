@@ -1,6 +1,57 @@
-<div id="clearance" class="sign-in">
-  <h2><%= t(".title") %></h2>
+<!DOCTYPE html>
+<html lang="en">
 
-  <%= render partial: '/sessions/form' %>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Login | Wordbase</title>
+  <%= stylesheet_link_tag "login" %>
+</head>
+
+<body style="height: 100vh;">
+<div class="flex-row">
+  <div class="img-container">
+    <%= image_tag "login.jpg", alt: "Login background image", class: "left-img" %>
+    <p class="left-img">
+      Photo by <a href="https://unsplash.com/@irrabagon" target="_blank" rel="noreferrer nofollow">Alexandr
+      Popadin</a>
+    </p>
+  </div>
+  <div class="content-wrapper">
+    <div class="content-container">
+      <div>
+        <div class="logo-container">
+          <%= image_tag "logo.png" %>
+          <h1>Wordbase</h1>
+        </div>
+        <h1>Nice to see you again!</h1>
+        <form>
+          <div class="flex-col">
+            <label for="email" class="text-muted label">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" class="form-item"
+                   required>
+          </div>
+          <div class="flex-col">
+            <div class="flex-row justify-sb">
+              <label for="password" class="text-muted label">Password</label>
+              <a href="#" class="text-muted action">Forgotten password?</a>
+            </div>
+            <input type="password" id="password" name="password" placeholder="Enter your password"
+                   class="form-item" required>
+          </div>
+          <div class="flex-row remember-me">
+            <input type="checkbox" id="remember-me" name="remember-me">
+            <label for="remember-me">Remember me</label>
+          </div>
+          <button type="submit" class="form-item submit">Login</button>
+        </form>
+        <p class="ta-center">Don't have an account? <a href="#">Register</a></p>
+      </div>
+      <p class=" ta-center text-muted">&copy; Wordbase (JPY Holdings) 2024</p>
+    </div>
+  </div>
 </div>
+</body>
+
+</html>
